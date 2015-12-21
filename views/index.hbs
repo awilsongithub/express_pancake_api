@@ -7,9 +7,22 @@
   <em>Current Version:</em> {{version}}
 </p>
 
-<section>
+<section id="pancake-listing">
   <h2>Pancakes Listing</h2>
-  <div class="pancakes">
-
-  </div>
 </section>
+
+
+<!-- defining an underscore.js template  -->
+<script type="text/template" id="recipe-template">
+<article>
+   <strong>Ingredients</strong>: <%= ingredients %><br>
+   <strong>Type</strong>: <%= type %><br>
+   <strong>Topping</strong>: <%= topping %><br>
+   <strong>Syrup</strong>: <%= syrup %><br>
+   <strong>Instructions</strong>: <%= instructions %><br>
+   <strong>Time</strong>: <%= time %><br>
+</article>
+</script>
+
+<!-- loading custom app -->
+<script  src="/javascripts/app.js"></script>

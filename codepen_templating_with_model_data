@@ -1,0 +1,23 @@
+<div id="content"></div>
+
+<script type='text/template' id='welcome'>
+  <h1>Welcome, <%= username %></h1>
+  <p>Today's outlook is <%= outlook %>, with a chance of <%= weather %>. Have a great day!</p>
+</script>
+
+<script>
+   var newModel = {
+     username: 'Adam',
+     outlook: 'splendid',
+     weather: 'my adidas shall suffice.'
+   };
+
+   // grab html for js to use for template
+   var newTemplate = $('#welcome').html();
+   // create a method that encompasses the template format and the ability to put Model data into it
+   // a + b = the power!
+   // _.template() creates useable template
+   var newCompiledTemplate = _.template(newTemplate);
+   // append data + method + format
+   $('#content').append(newCompiledTemplate(newModel));
+</script>
