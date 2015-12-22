@@ -1,5 +1,10 @@
-// namespace
+/*=======================================================
+                     namespace
+=======================================================*/
+// app or obj. in case another file loaded first
+// and it's already existing.
 var app = app || {};
+// active is for instantiated objects
 var active = active || {};
 
 // model should be first
@@ -51,6 +56,8 @@ app.CollectionView = Backbone.View.extend({
   }
 });
 
+// mView uses render of data, template, _., append.
+// and is like <li> within cView <ul>
 app.ModelView = Backbone.View.extend({
   initialize: function() {
     console.log('ModelView instantiated and awaiting orders, sir');
@@ -58,6 +65,8 @@ app.ModelView = Backbone.View.extend({
   },
   render: function() {
     console.log('ModelView rendering.');
+    // this.model will be specified later...
+    // it doesn't know it yet...
     var data = this.model.attributes;
     console.log('grabbing template');
     var template = $('#recipe-template').html();
@@ -67,6 +76,9 @@ app.ModelView = Backbone.View.extend({
     var html = compileTpl(data);
     console.log(html);
     console.log('rendering to page..');
+    // $el is a backbone item that gathers all the
+    // dom info above inton one place like
+    // dtown chcg is within the el loop
     this.$el.append(html);
   }
 });
